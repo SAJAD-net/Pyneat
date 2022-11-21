@@ -1,6 +1,7 @@
 import os
 import sys
 from pathlib import Path
+import time
 
 
 DIRECTORIES = {
@@ -55,4 +56,7 @@ def organize_junk(dest_path):
         
 if __name__ == "__main__":
     if dest_path:=sys.argv[1]:
+        start_time = time.time()
         organize_junk(dest_path)
+        total_time = (time.time() - start_time)
+        print(f"- status : successfully done, total time : {total_time:.0}s")
